@@ -7,7 +7,7 @@ class Mail extends Component {
     return(
       <section id="mail">
         <a href="mailto:hi@ch3rn1k.me">hi@ch3rn1k.me</a>
-        <span>Пиши, не стесняйся! (:</span>
+        <span>{this.props.language === 'ru' ? 'Пиши, не стесняйся!' : 'Write me, do not be shy!'} (:</span>
       </section>
     )
   }

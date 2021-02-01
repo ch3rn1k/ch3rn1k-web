@@ -9,11 +9,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <Welcome />
-        <Portfolio />
-        <Mail />
+        <Welcome language={this.getLanguage()} />
+        <Portfolio language={this.getLanguage()} />
+        <Mail language={this.getLanguage()} />
       </>
     )
+  }
+
+  getLanguage = () => {
+    if (navigator.language === 'ru-RU' || navigator.language === 'ru') return 'ru';
+    else return 'en';
   }
 }
 
