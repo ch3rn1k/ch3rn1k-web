@@ -5,7 +5,7 @@ import '../assets/styles/App.scss';
 class App extends Component {
   render() {
     return (
-      <div>Hello World</div>
+      <div className="qq">Hello World</div>
     )
   }
 }

@@ -19,11 +19,11 @@ module.exports = {
         author: 'ch3rn1k'
       }
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: path.resolve(__dirname, './src/assets/images'), to: 'img' }
-      ]
-    })
+    // new CopyPlugin({
+    //   patterns: [
+    //     { from: path.resolve(__dirname, './src/assets/images'), to: 'img' }
+    //   ]
+    // })
   ],
   output: {
     filename: '[name].[contenthash].bundle.js',
