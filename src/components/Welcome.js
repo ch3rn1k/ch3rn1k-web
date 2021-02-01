@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import '../assets/styles/Welcome.scss'
 
 class Welcome extends Component {
+  handleClickScrollDown = () => {
+    let el = document.getElementById('portfolio');
+
+    el.scrollIntoView({ block: 'start', behavior: 'smooth' }); 
+  }
+
   render() {
     return (
       <section id="welcome">
@@ -21,7 +27,7 @@ class Welcome extends Component {
           <div className="welcome-dialog--item">Ну и конечно же крафт "железа", с кастомными водянками, ням.</div>
         </div>
         <div className="shit-happens">Don't like this site?<small>It's a pity, but I kept the old versions <a href="/old2" target="_blank">here</a> and <a href="/old" target="_blank">here</a>. Do not be scared!</small></div>
-        <a id="welcome-scroll"></a>
+        <a onClick={this.handleClickScrollDown} id="welcome-scroll"></a>
       </section>
     )
   }
