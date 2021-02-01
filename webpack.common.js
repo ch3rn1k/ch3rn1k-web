@@ -13,17 +13,18 @@ module.exports = {
       title: 'Hello World',
       template: path.resolve(__dirname, './src/template.html'),
       filename: 'index.html',
+      favicon: path.resolve(__dirname, './src/assets/images/favicon.png'),
       meta: {
         viewport: 'width=device-width, initial-scale=1',
         charset: 'UTF-8',
         author: 'ch3rn1k'
       }
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: path.resolve(__dirname, './src/assets/images'), to: 'img' }
-    //   ]
-    // })
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, './src/assets/images'), to: 'img' }
+      ]
+    })
   ],
   output: {
     filename: '[name].[contenthash].bundle.js',

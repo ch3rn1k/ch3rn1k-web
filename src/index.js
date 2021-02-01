@@ -10,6 +10,7 @@ console.log(`%cDEV BUILD ${pkg.version}`, 'font-size: 2rem; font-weight: 600;');
 class Core {
   constructor() {
     this.titles = ['OR WEEB?', 'CAN I HAVE A SLEEP?', 'CALL THE POLICE', 'LEAVE ME ALONE!!!', 'LMAO'];
+    this.favicon = document.querySelector('link[rel="icon"]').href;
 
     setInterval(() => this.pageIconRandomizer(), 500);
 
@@ -26,7 +27,7 @@ class Core {
 
     let context = canvas.getContext('2d');
     let img = document.createElement('img');
-    img.src = this.headIconBackup;
+    img.src = this.favicon;
 
     img.onload = () => {
       /** Draw original favicon as background. */
