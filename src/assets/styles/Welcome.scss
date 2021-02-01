@@ -1,0 +1,60 @@
+/** Main Styles */
+$main-color: #f9d342;
+$sub-color: #292826;
+
+section#welcome {
+  position: relative;
+  padding: 32px 48px;
+  min-height: 100vh;
+  background-color: $sub-color;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: $main-color;
+    text-underline-offset: -16px;
+    text-decoration-thickness: 2px;
+  }
+  .welcome-dialog {
+    opacity: 0.85;
+    margin: auto 0;
+    padding: 100px 0;
+    color: $main-color;
+
+    .welcome-dialog--item {
+      margin-top: 8px;
+
+      small {
+        opacity: 0.25;
+      }
+    }
+  }
+  #welcome-scroll {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 24 24' fill='none' stroke='%23292826' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'/%3E%3Cpolyline points='19 12 12 19 5 12'/%3E%3C/svg%3E");
+    background-color: $main-color;
+    animation: moveDown 400ms infinite linear;
+    position: absolute;
+    right: 48px;
+    top: 0;
+    bottom: 0;
+    width: 70px;
+  }
+  .shit-happens small {
+    display: block;
+    opacity: 0.5;
+  }
+  h1::selection,
+  h2::selection,
+  h3::selection,
+  h4::selection,
+  h5::selection,
+  h5::selection,
+  h6::selection,
+  div::selection,
+  small::selection {
+    color: $sub-color;
+    background-color: $main-color;
+  }
+}

@@ -1,0 +1,32 @@
+/** Main Styles */
+$main-color: #f9d342;
+$sub-color: #292826;
+
+section#mail {
+  position: relative;
+  padding: 32px 48px;
+  background-color: $sub-color;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: $main-color;
+    font-size: 48px;
+
+    ::selection {
+      color: $sub-color;
+      background-color: $main-color;
+    }
+  }
+  span {
+    opacity: 0.4;
+
+    ::selection {
+      color: $sub-color;
+      background-color: $main-color;
+    }
+  }
+}
