@@ -1,0 +1,46 @@
+{
+  "name": "ch3rn1k-web",
+  "version": "1.0.0",
+  "description": "ch3rn1k.me website based on react with webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ch3rn1k/ch3rn1k-web.git"
+  },
+  "author": "ch3rn1k",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ch3rn1k/ch3rn1k-web/issues"
+  },
+  "homepage": "https://github.com/ch3rn1k/ch3rn1k-web#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^5.0.0",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
