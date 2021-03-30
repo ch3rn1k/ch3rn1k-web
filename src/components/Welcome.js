@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React, { Component } from 'react'
 
 import '../assets/styles/Welcome.scss'
@@ -15,11 +16,11 @@ class Welcome extends Component {
 
   render() {
     let ru = (<section id="welcome">
-                <h1>Типичный IT</h1>
-                <h2>Много кода</h2>
-                <h4>Немного дизайна</h4>
-                <h6>Щепотка железа</h6>
-                <div className="welcome-dialog">
+                <motion.h1 initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Типичный IT</motion.h1>
+                <motion.h2 transition={{ delay: 0.25 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Много кода</motion.h2>
+                <motion.h4 transition={{ delay: 0.5 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Немного дизайна</motion.h4>
+                <motion.h6 transition={{ delay: 0.75 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Щепотка железа</motion.h6>
+                <motion.div transition={{ delay: 1.5 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="welcome-dialog">
                   <h5>Привет, %username%!</h5>
                   <div className="welcome-dialog--item">
                     <div>Меня зовут ch3rn1k и я Fullstack JS.</div>
@@ -28,20 +29,20 @@ class Welcome extends Component {
                   </div>
                   <div className="welcome-dialog--item">Создаю удобные интерфейсы в сложных приложениях - UX/UI.</div>
                   <div className="welcome-dialog--item">Ну и конечно же крафт "железа", с кастомными водянками, ням.</div>
-                </div>
-                <div className="shit-happens">
+                </motion.div>
+                <motion.div transition={{ delay: 2.5 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="shit-happens">
                   Не нравится этот сайт? 
                   <small>А жаль, но я сохранил старые версии <a href="/old" target="_blank">тут</a> и <a href="/superold" target="_blank">тут</a>. Только не пугайся!</small>
-                </div>
+                </motion.div>
                 <a onClick={this.handleClickScrollDown} id="welcome-scroll"></a>
               </section>);
 
     let en = (<section id="welcome">
-                <h1>Typical IT</h1>
-                <h2>Some code</h2>
-                <h4>Bit design</h4>
-                <h6>Pinch hw</h6>
-                <div className="welcome-dialog">
+                <motion.h1 initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Typical IT</motion.h1>
+                <motion.h2 transition={{ delay: 0.25 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Some code</motion.h2>
+                <motion.h4 transition={{ delay: 0.5 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Bit design</motion.h4>
+                <motion.h6 transition={{ delay: 0.75 }} initial={{ x: '-100px', opacity: 0 }} animate={{ x: '0', opacity: 1 }}>Pinch hw</motion.h6>
+                <motion.div transition={{ delay: 1.5 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="welcome-dialog">
                   <h5>Hello, %username%!</h5>
                   <div className="welcome-dialog--item">
                     <div>My name is ch3rn1k and I am Fullstack JS.</div>
@@ -50,11 +51,11 @@ class Welcome extends Component {
                   </div>
                   <div className="welcome-dialog--item">Creating user-friendly interfaces in complex applications - UX/UI.</div>
                   <div className="welcome-dialog--item">And of course, custom PC's, with water coolings, yum.</div>
-                </div>
-                <div className="shit-happens">
+                </motion.div>
+                <motion.div transition={{ delay: 2.5 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="shit-happens">
                   Don't like this site?
                   <small>It's a pity, but I kept the old versions <a href="/old" target="_blank">here</a> and <a href="/superold" target="_blank">here</a>. Do not be scared!</small>
-                </div>
+                </motion.div>
                 <a onClick={this.handleClickScrollDown} id="welcome-scroll"></a>
               </section>);
 
