@@ -1,25 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Welcome from './Welcome.js'
 import Portfolio from './Portfolio.js'
 import Mail from './Mail.js'
 
+import msRU from '../language/ru'
+import msEN from '../language/en'
+
 import '../assets/styles/App.scss'
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <Welcome language={this.getLanguage()} />
-        <Portfolio language={this.getLanguage()} />
-        <Mail language={this.getLanguage()} />
-      </>
-    )
-  }
+const App = () => {
+  /** FUNCTIONS */
+  const getLanguageMessages = () => {
+    if (navigator.language === 'ru-RU' || navigator.language === 'ru') return msRU;
+    else return msEN;
+  };
 
-  getLanguage = () => {
-    if (navigator.language === 'ru-RU' || navigator.language === 'ru') return 'ru';
-    else return 'en';
-  }
-}
+  /** TEMPLATE */
+  return (
+    <>
+      <Welcome ms={getLanguageMessages()} />
+      <Portfolio ms={getLanguageMessages()} />
+      <Mail ms={getLanguageMessages()} />
+    </>
+  );
+};
 
-export default App
+export default App;

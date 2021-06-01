@@ -1,90 +1,180 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PortfolioItem from './PortfolioItem'
 
 import '../assets/styles/Portfolio.scss'
 
-class Portfolio extends Component {
-  render() {
-    return(
-      <section id="portfolio">
-        <h1>{this.props.language === 'ru' ? 'Портфолио' : 'Portfolio'}</h1>
-        <div className="portfolio-container">
-          <div className="portfolio-container--title">Discord</div>
-          <div className="portfolio-container--items">
-            <a href="https://discordapp.com/api/oauth2/authorize?client_id=517238171969257476&permissions=0&scope=bot" target="_blank" className="portfolio-container--item on" tabIndex="0">
-              {this.props.language === 'ru' ? 'Мафон бати' : 'Daddys Player'}
-              <span>{this.props.language === 'ru' ? 'Музыкальный бот с фичами рэйпа' : 'Music bot with rape features'}</span>
-            </a>
-            <a href="https://discordapp.com/api/oauth2/authorize?client_id=680698134338207754&permissions=0&scope=bot" target="_blank" className="portfolio-container--item on" tabIndex="0">
-              {this.props.language === 'ru' ? 'Приватный комнатник' : 'Private Roomer'}
-              <span>{this.props.language === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms'}</span>
-            </a>
-            <a target="_blank" className="portfolio-container--item off" tabIndex="0">
-              {this.props.language === 'ru' ? 'Шутник и шут' : 'Joker and Jester'}
-              <span>{this.props.language === 'ru' ? 'Пишет самые тупые шутки' : 'Writes the dumbest jokes in the world'}</span>
-            </a>
-            <a className="portfolio-container--item off" tabIndex="0">
-              {this.props.language === 'ru' ? 'Повелитель онлайна' : 'Online Master'}
-              <span>{this.props.language === 'ru' ? 'Счетчик онлайна для RUST проектов' : 'Online counter for RUST projects'}</span>
-            </a>
-            <a className="portfolio-container--item private" tabIndex="0">
-              {this.props.language === 'ru' ? 'Личный нибба' : 'Personal Nibba'}
-              <span>{this.props.language === 'ru' ? 'Работяга который прикалывается' : 'The hard worker who makes fun'}</span>
-            </a>
-            <a className="portfolio-container--item private" tabIndex="0">
-              {this.props.language === 'ru' ? 'Всеотец CRMP' : 'Allfather of CRMP'}
-              <span>{this.props.language === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP'}</span>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-container">
-          <div className="portfolio-container--title">Donation Alerts</div>
-          <div className="portfolio-container--items">
-            <a href="https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10" target="_blank" className="portfolio-container--item" tabIndex="0">
-              {this.props.language === 'ru' ? 'Всратое колесо фортуны' : 'Shitty the wheel of fortune'}
-              <span>{this.props.language === 'ru' ? 'Когда то делалось для "стримера", но он умер' : 'Once it was done for the "streamer", but he died'}</span>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-container">
-          <div className="portfolio-container--title">VK</div>
-          <div className="portfolio-container--items">
-            <a className="portfolio-container--item" tabIndex="0">
-              {this.props.language === 'ru' ? 'Таблица онлайна' : 'Online table'}
-              <span>{this.props.language === 'ru' ? 'Счетчик онлайна на WS для RUST проектов' : 'Online counter on WS for RUST projects'}</span>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-container">
-          <div className="portfolio-container--title">API</div>
-          <div className="portfolio-container--items">
-            <a href="http://api.ch3rn1k.me/rust/servers" className="portfolio-container--item" tabIndex="0">
-              RUST JSON online
-              <span>{this.props.language === 'ru' ? 'Данные по онлайну серверов в RUST' : 'Server online data in RUST'}</span>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-container">
-          <div className="portfolio-container--title">Homebridge</div>
-          <div className="portfolio-container--items">
-            <a href="https://github.com/ch3rn1k/homebridge-multipurpose-kettle" className="portfolio-container--item" tabIndex="0">
-              Xiaomi Multipurpose Kettle
-              <span>{this.props.language === 'ru' ? 'Плагин для супер-пупер умного чайника (умнее меня, 146%)' : 'Plugin for super duper smart kettle (smarter than me, 146%)'}</span>
-            </a>
-          </div>
-        </div>
-        <div className="my-contacts">
-          <div className="my-contacts--title">{this.props.language === 'ru' ? 'Собственно говоря, вот и я:' : 'As a matter of fact, here I am:'}</div>
-          <div className="my-contacts--links">
-            <a href="https://vk.com/ch3rn1k" target="_blank">VK</a>
-            <a href="https://t.me/ch3rn1k" target="_blank">TELEGRAM</a>
-            <a href="https://www.instagram.com/ch3rn1k/" target="_blank">INSTAGRAM</a>
-            <a href="https://discord.gg/2qk9B6u" target="_blank">DISCORD</a>
-            <a href="https://steamcommunity.com/id/ch3rn1k/" target="_blank">STEAM</a>
-          </div>
-        </div>
-      </section>
-    )
-  }
-}
+const Portfolio = ({ ms }) => {
+  /** DATA */
+  const discordBotsList = [
+    {
+      link: 'https://discord.com/api/oauth2/authorize?client_id=517238171969257476&permissions=8&scope=bot%20applications.commands',
+      title: ms.key === 'ru' ? 'Мафон бати' : 'Daddys Player',
+      description: ms.key === 'ru' ? 'Музыкальный бот с фичами рэйпа' : 'Music bot with rape features',
+      status: 'on'
+    },
+    {
+      link: 'https://discordapp.com/api/oauth2/authorize?client_id=680698134338207754&permissions=0&scope=bot',
+      title: ms.key === 'ru' ? 'Приватный комнатник' : 'Private Roomer',
+      description: ms.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
+      status: 'on'
+    },
+    {
+      title: ms.key === 'ru' ? 'Личный нибба' : 'Personal Nibba',
+      description: ms.key === 'ru' ? 'Работяга который прикалывается' : 'The hard worker who makes fun',
+      status: 'private'
+    },
+    {
+      title: ms.key === 'ru' ? 'Шутник и шут' : 'Joker and Jester',
+      description: ms.key === 'ru' ? 'Пишет самые тупые шутки' : 'Writes the dumbest jokes in the world',
+      status: 'off'
+    },
+    {
+      title: ms.key === 'ru' ? 'Повелитель онлайна' : 'Online Master',
+      description: ms.key === 'ru' ? 'Счетчик онлайна для RUST проектов' : 'Online counter for RUST projects',
+      status: 'off'
+    },
+    {
+      title: ms.key === 'ru' ? 'Всеотец CRMP' : 'Allfather of CRMP',
+      description: ms.key === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP',
+      status: 'off'
+    }
+  ];
+  const uxuiData = [
+    {
+      link: 'https://www.figma.com/file/NSnML0ADOmdEmy30pXi8db/landlord',
+      title: 'LANDLORD',
+      description: ms.key === 'ru' ? 'Анализ, Скетчи, UX, UI, Front-End, Back-End всего сайта' : 'Analysis, Sketches, UX, UI, Front-End, Back-End all the site'
+    }
+  ];
+  const donationAlertsData = [
+    {
+      link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
+      title: ms.key === 'ru' ? 'Всратое колесо фортуны' : 'Shitty the wheel of fortune',
+      description: ms.key === 'ru' ? 'Когда то делалось для "стримера", но он умер' : 'Once it was done for the "streamer", but he died'
+    }
+  ];
+  const vkData = [
+    {
+      title: ms.key === 'ru' ? 'Таблица онлайна' : 'Online table',
+      description: ms.key === 'ru' ? 'Счетчик онлайна на WS для RUST проектов' : 'Online counter on WS for RUST projects',
+      status: 'private'
+    }
+  ];
+  const apiData = [
+    {
+      title: ms.key === 'ru' ? 'RUST JSON СЕРВЕРЫ' : 'RUST JSON SERVERS',
+      description: ms.key === 'ru' ? 'Данные по онлайну серверов в RUST в JSON формате' : 'Data of servers online in RUST in JSON format',
+      status: 'private'
+    }
+  ];
+  const homebridgeData = [
+    {
+      link: 'https://github.com/ch3rn1k/homebridge-multipurpose-kettle',
+      title: 'Xiaomi Multipurpose Kettle',
+      description: ms.key === 'ru' ? 'Плагин для супер-пупер умного чайника (умнее меня, 146%)' : 'Plugin for super duper smart kettle (smarter than me, 146%)'
+    }
+  ];
 
-export default Portfolio
+  /** TEMPLATES */
+  return (
+    <section id="portfolio">
+      <h1>{ms.portfolio.title}</h1>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">Discord</div>
+        <div className="portfolio-container--items">
+          {discordBotsList.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">WEB</div>
+        <div className="portfolio-container--items">
+          {uxuiData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">Donation Alerts</div>
+        <div className="portfolio-container--items">
+          {donationAlertsData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">VK</div>
+        <div className="portfolio-container--items">
+          {vkData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">API</div>
+        <div className="portfolio-container--items">
+          {apiData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">Homebridge</div>
+        <div className="portfolio-container--items">
+          {homebridgeData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="my-contacts">
+        <div className="my-contacts--title">{ms.portfolio.thatsMe}</div>
+        <div className="my-contacts--links">
+          <a href="https://vk.com/ch3rn1k" target="_blank">VK</a>
+          <a href="https://t.me/ch3rn1k" target="_blank">TELEGRAM</a>
+          <a href="https://www.instagram.com/ch3rn1k/" target="_blank">INSTAGRAM</a>
+          <a href="https://discord.gg/2qk9B6u" target="_blank">DISCORD</a>
+          <a href="https://steamcommunity.com/id/ch3rn1k/" target="_blank">STEAM</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
