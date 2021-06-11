@@ -15,12 +15,14 @@ const App = () => {
     else return msEN;
   };
 
+  const allMessages = getLanguageMessages();
+
   /** TEMPLATE */
   return (
     <>
-      <Welcome ms={getLanguageMessages()} />
-      <Portfolio ms={getLanguageMessages()} />
-      <Mail ms={getLanguageMessages()} />
+      <Welcome ms={allMessages} />
+      <Portfolio ms={allMessages} />
+      <Mail ms={allMessages} />
     </>
   );
 };
