@@ -41,9 +41,14 @@ const Portfolio = ({ ms }) => {
   ];
   const uxuiData = [
     {
-      link: 'https://www.figma.com/file/NSnML0ADOmdEmy30pXi8db/landlord',
+      link: 'https://landlord.ru',
       title: 'LANDLORD',
       description: ms.key === 'ru' ? 'Анализ, Скетчи, UX, UI, Front-End, Back-End всего сайта' : 'Analysis, Sketches, UX, UI, Front-End, Back-End all the site'
+    },
+    {
+      link: 'https://ch3rn1k.me',
+      title: 'ch3rn1k',
+      description: ms.key === 'ru' ? 'Тут особо нечего рассказывать - мое чадо' : 'Nothing to explain here - my child'
     }
   ];
   const donationAlertsData = [
