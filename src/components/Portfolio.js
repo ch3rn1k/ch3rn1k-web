@@ -43,12 +43,17 @@ const Portfolio = ({ ms }) => {
     {
       link: 'https://landlord.ru',
       title: 'LANDLORD',
-      description: ms.key === 'ru' ? 'Анализ, Скетчи, UX, UI, Front-End, Back-End всего сайта' : 'Analysis, Sketches, UX, UI, Front-End, Back-End all the site'
+      description: 'Fullstack . NextJS + React'
+    },
+    {
+      link: 'https://pro.landlord.ru',
+      title: 'LANDLORD PRO',
+      description: 'Fullstack . Vanilla + Microservices'
     },
     {
       link: 'https://ch3rn1k.me',
       title: 'ch3rn1k',
-      description: ms.key === 'ru' ? 'Тут особо нечего рассказывать - мое чадо' : 'Nothing to explain here - my child'
+      description: 'Frontend . React'
     }
   ];
   const donationAlertsData = [
