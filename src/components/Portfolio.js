@@ -54,6 +54,11 @@ const Portfolio = ({ ms }) => {
       link: 'https://ch3rn1k.me',
       title: 'ch3rn1k',
       description: 'Frontend . React'
+    },
+    {
+      link: 'https://katypa.me',
+      title: 'katypa',
+      description: 'Frontend . React'
     }
   ];
   const donationAlertsData = [
