@@ -183,9 +183,7 @@ const Portfolio = ({ ms }) => {
         <div className="my-contacts--links">
           <a href="https://vk.com/ch3rn1k" target="_blank">VK</a>
           <a href="https://t.me/ch3rn1k" target="_blank">TELEGRAM</a>
-          <a href="https://www.instagram.com/ch3rn1k/" target="_blank">INSTAGRAM</a>
-          <a href="https://discord.gg/2qk9B6u" target="_blank">DISCORD</a>
-          <a href="https://steamcommunity.com/id/ch3rn1k/" target="_blank">STEAM</a>
+          <a href="https://steamcommunity.com/id/ch3rn1k" target="_blank">STEAM</a>
         </div>
       </div>
     </section>
