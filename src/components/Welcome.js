@@ -1,15 +1,13 @@
-import { motion } from 'framer-motion'
-import React from 'react'
+import { motion } from 'framer-motion';
+import React from 'react';
+import '../assets/styles/Welcome.scss';
 
-import '../assets/styles/Welcome.scss'
+const handleClickScrollDown = () => {
+  let el = document.getElementById('portfolio');
+  el.scrollIntoView({ block: 'start', behavior: 'smooth' }); 
+};
 
 const Welcome = ({ ms }) => {
-  /** FUNCTIONS */
-  const handleClickScrollDown = () => {
-    let el = document.getElementById('portfolio');
-    el.scrollIntoView({ block: 'start', behavior: 'smooth' }); 
-  };
-
   /** TEMPLATE */
   return (
     <section id="welcome">

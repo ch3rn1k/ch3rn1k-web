@@ -1,11 +1,10 @@
-import React from 'react'
-import PortfolioItem from './PortfolioItem'
-
-import '../assets/styles/Portfolio.scss'
+import React from 'react';
+import PortfolioItem from './PortfolioItem';
+import '../assets/styles/Portfolio.scss';
 
 const Portfolio = ({ ms }) => {
   /** DATA */
-  const discordBotsList = [
+  const discordBotsData = [
     {
       link: 'https://discord.com/api/oauth2/authorize?client_id=517238171969257476&permissions=8&scope=bot%20applications.commands',
       title: ms.key === 'ru' ? 'Мафон бати' : 'Daddys Player',
@@ -61,6 +60,13 @@ const Portfolio = ({ ms }) => {
       description: 'Frontend . React'
     }
   ];
+  const gta5Data = [
+    {
+      link: 'https://ch3rn1k.me/archive/binderBot/setup.exe',
+      title: 'BinderBot',
+      description: ms.key === 'ru' ? 'Лучший биндер для гташки' : 'Best binder for GTA'
+    }
+  ];
   const donationAlertsData = [
     {
       link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
@@ -97,7 +103,21 @@ const Portfolio = ({ ms }) => {
       <div className="portfolio-container">
         <div className="portfolio-container--title">Discord</div>
         <div className="portfolio-container--items">
-          {discordBotsList.map((value, index) => (
+          {discordBotsData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">GTA5</div>
+        <div className="portfolio-container--items">
+          {gta5Data.map((value, index) => (
             <PortfolioItem
               key={index}
               link={value.link}

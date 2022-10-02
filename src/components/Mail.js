@@ -1,6 +1,5 @@
-import React from 'react'
-
-import '../assets/styles/Mail.scss'
+import React from 'react';
+import '../assets/styles/Mail.scss';
 
 const Mail = ({ ms }) => {
   /** TEMPLATE */
