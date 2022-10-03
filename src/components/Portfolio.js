@@ -62,7 +62,7 @@ const Portfolio = ({ ms }) => {
   ];
   const gta5Data = [
     {
-      link: 'https://ch3rn1k.me/archive/binderBot/BinderBot Setup.exe',
+      link: 'https://ch3rn1k.me/archive/binderBot/BinderBotSetup.exe',
       title: 'BinderBot',
       description: ms.key === 'ru' ? 'Лучший биндер для гташки' : 'Best binder for GTA'
     }
