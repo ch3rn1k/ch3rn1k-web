@@ -60,11 +60,16 @@ const Portfolio = ({ ms }) => {
       description: 'Frontend . React'
     }
   ];
-  const gta5Data = [
+  const desktopData = [
     {
       link: 'https://ch3rn1k.me/archive/binderBot/BinderBotSetup.exe',
       title: 'BinderBot',
-      description: ms.key === 'ru' ? 'Лучший биндер для гташки' : 'Best binder for GTA'
+      description: ms.key === 'ru' ? 'Лучший биндер для гташки 5' : 'Best binder for GTA5'
+    },
+    {
+      link: 'https://ch3rn1k.me/archive/binderBot/ch3rn1k_botProfile',
+      title: 'BinderBot Profile',
+      description: ms.key === 'ru' ? 'Готовый профиль для лучшего биндера' : 'Ready profile for best binder'
     }
   ];
   const donationAlertsData = [
@@ -115,9 +120,9 @@ const Portfolio = ({ ms }) => {
         </div>
       </div>
       <div className="portfolio-container">
-        <div className="portfolio-container--title">GTA5</div>
+        <div className="portfolio-container--title">DESKTOP</div>
         <div className="portfolio-container--items">
-          {gta5Data.map((value, index) => (
+          {desktopData.map((value, index) => (
             <PortfolioItem
               key={index}
               link={value.link}
