@@ -6,16 +6,22 @@ const Portfolio = ({ ms }) => {
   /** DATA */
   const discordBotsData = [
     {
+      link: 'https://discord.com/api/oauth2/authorize?client_id=1043512059108798484&permissions=8&scope=bot%20applications.commands',
+      title: ms.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
+      description: ms.key === 'ru' ? 'Бот с оповещениями о новых ЖБ с форума и своей БД' : 'Bot with notifications about new warns from the forum and its own database',
+      status: 'on'
+    },
+    {
       link: 'https://discord.com/api/oauth2/authorize?client_id=517238171969257476&permissions=8&scope=bot%20applications.commands',
       title: ms.key === 'ru' ? 'Мафон бати' : 'Daddys Player',
       description: ms.key === 'ru' ? 'Музыкальный бот с фичами рэйпа' : 'Music bot with rape features',
-      status: 'on'
+      status: 'off'
     },
     {
       link: 'https://discordapp.com/api/oauth2/authorize?client_id=680698134338207754&permissions=0&scope=bot',
       title: ms.key === 'ru' ? 'Приватный комнатник' : 'Private Roomer',
       description: ms.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
-      status: 'on'
+      status: 'off'
     },
     {
       title: ms.key === 'ru' ? 'Личный нибба' : 'Personal Nibba',
@@ -67,9 +73,9 @@ const Portfolio = ({ ms }) => {
       description: ms.key === 'ru' ? 'Лучший биндер для гташки 5' : 'Best binder for GTA5'
     },
     {
-      link: 'https://ch3rn1k.me/archive/binderBot/ch3rn1k_botProfile',
-      title: 'BinderBot Profile',
-      description: ms.key === 'ru' ? 'Готовый профиль для лучшего биндера' : 'Ready profile for best binder'
+      link: 'https://ch3rn1k.me/archive/index.php?b=binderBot%2Fprofiles',
+      title: ms.key === 'ru' ? 'BinderBot профили' : 'BinderBot Profiles',
+      description: ms.key === 'ru' ? 'Готовые профили для лучшего биндера' : 'Ready profiles for best binder'
     }
   ];
   const donationAlertsData = [
