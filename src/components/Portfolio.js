@@ -1,50 +1,54 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PortfolioItem from './PortfolioItem';
 import '../assets/styles/Portfolio.scss';
 
-const Portfolio = ({ ms }) => {
-  /** DATA */
-  const discordBotsData = [
+const Portfolio = ({ l10n }) => {
+  const discordBotsData = useRef([
     {
       link: 'https://discord.com/api/oauth2/authorize?client_id=1043512059108798484&permissions=8&scope=bot%20applications.commands',
-      title: ms.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
-      description: ms.key === 'ru' ? 'Бот с оповещениями о новых ЖБ с форума и своей БД' : 'Bot with notifications about new warns from the forum and its own database',
+      title: l10n.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
+      description: l10n.key === 'ru' ? 'Бот с оповещениями о новых ЖБ' : 'Bot with notifications about new warns from forum',
       status: 'on'
     },
     {
+      title: 'Armavir Bot',
+      description: l10n.key === 'ru' ? 'Ботярикс с кучей функционала' : 'Bot with a lot of functions',
+      status: 'off'
+    },
+    {
       link: 'https://discord.com/api/oauth2/authorize?client_id=517238171969257476&permissions=8&scope=bot%20applications.commands',
-      title: ms.key === 'ru' ? 'Мафон бати' : 'Daddys Player',
-      description: ms.key === 'ru' ? 'Музыкальный бот с фичами рэйпа' : 'Music bot with rape features',
+      title: l10n.key === 'ru' ? 'Мафон бати' : 'Daddys Player',
+      description: l10n.key === 'ru' ? 'Музыкальный бот с фичами рэйпа' : 'Music bot with rape features',
       status: 'off'
     },
     {
       link: 'https://discordapp.com/api/oauth2/authorize?client_id=680698134338207754&permissions=0&scope=bot',
-      title: ms.key === 'ru' ? 'Приватный комнатник' : 'Private Roomer',
-      description: ms.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
+      title: l10n.key === 'ru' ? 'Приватный комнатник' : 'Private Roomer',
+      description: l10n.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
       status: 'off'
     },
     {
-      title: ms.key === 'ru' ? 'Личный нибба' : 'Personal Nibba',
-      description: ms.key === 'ru' ? 'Работяга который прикалывается' : 'The hard worker who makes fun',
-      status: 'private'
-    },
-    {
-      title: ms.key === 'ru' ? 'Шутник и шут' : 'Joker and Jester',
-      description: ms.key === 'ru' ? 'Пишет самые тупые шутки' : 'Writes the dumbest jokes in the world',
+      title: l10n.key === 'ru' ? 'Личный нибба' : 'Personal Nibba',
+      description: l10n.key === 'ru' ? 'Работяга который прикалывается' : 'The hard worker who makes fun',
       status: 'off'
     },
     {
-      title: ms.key === 'ru' ? 'Повелитель онлайна' : 'Online Master',
-      description: ms.key === 'ru' ? 'Счетчик онлайна для RUST проектов' : 'Online counter for RUST projects',
+      title: l10n.key === 'ru' ? 'Шутник и шут' : 'Joker and Jester',
+      description: l10n.key === 'ru' ? 'Пишет самые тупые шутки' : 'Writes the dumbest jokes in the world',
       status: 'off'
     },
     {
-      title: ms.key === 'ru' ? 'Всеотец CRMP' : 'Allfather of CRMP',
-      description: ms.key === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP',
+      title: l10n.key === 'ru' ? 'Повелитель онлайна' : 'Online Master',
+      description: l10n.key === 'ru' ? 'Счетчик онлайна для RUST проектов' : 'Online counter for RUST projects',
+      status: 'off'
+    },
+    {
+      title: l10n.key === 'ru' ? 'Всеотец CRMP' : 'Allfather of CRMP',
+      description: l10n.key === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP',
       status: 'off'
     }
-  ];
-  const uxuiData = [
+  ]).current;
+  const webData = useRef([
     {
       link: 'https://landlord.ru',
       title: 'LANDLORD',
@@ -64,57 +68,88 @@ const Portfolio = ({ ms }) => {
       link: 'https://katypa.me',
       title: 'katypa',
       description: 'Frontend . React'
+    },
+    {
+      link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
+      title: l10n.key === 'ru' ? 'Всратое колесо фортуны' : 'Shitty the wheel of fortune',
+      description: l10n.key === 'ru' ? 'Колесо фортуны при донатиках' : 'Wheel of Fortune on donuts'
+    },
+    {
+      title: 'Majestic Web Scrapper',
+      description: l10n.key === 'ru' ? 'Паук который вечно парсит темы на форуме' : 'A crawler that always parses forum threads'
     }
-  ];
-  const desktopData = [
+  ]).current;
+  const telegramData = useRef([
+    {
+      link: 'https://t.me/majesticforumbot',
+      title: l10n.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
+      description: l10n.key === 'ru' ? 'Бот с оповещениями о новых ЖБ' : 'Bot with notifications about new warns from forum',
+      status: 'on'
+    },
+    {
+      title: 'Armavir Bot Telegram',
+      description: l10n.key === 'ru' ? 'Парсер постов для отправки в DS' : 'Posts parser to send them next to Discord',
+      status: 'private'
+    },
+    {
+      title: 'Giveway Bot',
+      description: l10n.key === 'ru' ? 'Бот с web_app интерфейсом для конкурсов' : 'Bot with web_app interface for contests',
+      status: 'private'
+    }
+  ]).current;
+  const mobileData = useRef([
+    {
+      link: 'https://apps.apple.com/ru/app/id1658493916',
+      title: 'LANDLORD',
+      description: 'iOS . React Native'
+    },
+    {
+      link: 'https://apps.rustore.ru/app/com.landlordmobileapp',
+      title: 'LANDLORD',
+      description: 'Android . React Native'
+    }
+  ]).current;
+  const desktopData = useRef([
     {
       link: 'https://ch3rn1k.me/archive/binderBot/BinderBotSetup.exe',
       title: 'BinderBot',
-      description: ms.key === 'ru' ? 'Лучший биндер для гташки 5' : 'Best binder for GTA5'
+      description: l10n.key === 'ru' ? 'Лучший биндер для гташки 5' : 'Best binder for GTA5'
     },
     {
       link: 'https://ch3rn1k.me/archive/index.php?b=binderBot%2Fprofiles',
-      title: ms.key === 'ru' ? 'BinderBot профили' : 'BinderBot Profiles',
-      description: ms.key === 'ru' ? 'Готовые профили для лучшего биндера' : 'Ready profiles for best binder'
+      title: l10n.key === 'ru' ? 'BinderBot профили' : 'BinderBot Profiles',
+      description: l10n.key === 'ru' ? 'Готовые профили для лучшего биндера' : 'Ready profiles for best binder'
     }
-  ];
-  const donationAlertsData = [
-    {
-      link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
-      title: ms.key === 'ru' ? 'Всратое колесо фортуны' : 'Shitty the wheel of fortune',
-      description: ms.key === 'ru' ? 'Когда то делалось для "стримера", но он умер' : 'Once it was done for the "streamer", but he died'
-    }
-  ];
-  const vkData = [
-    {
-      title: ms.key === 'ru' ? 'Таблица онлайна' : 'Online table',
-      description: ms.key === 'ru' ? 'Счетчик онлайна на WS для RUST проектов' : 'Online counter on WS for RUST projects',
-      status: 'private'
-    }
-  ];
-  const apiData = [
-    {
-      title: ms.key === 'ru' ? 'RUST JSON СЕРВЕРЫ' : 'RUST JSON SERVERS',
-      description: ms.key === 'ru' ? 'Данные по онлайну серверов в RUST в JSON формате' : 'Data of servers online in RUST in JSON format',
-      status: 'private'
-    }
-  ];
-  const homebridgeData = [
+  ]).current;
+  const homebridgeData = useRef([
     {
       link: 'https://github.com/ch3rn1k/homebridge-multipurpose-kettle',
       title: 'Xiaomi Multipurpose Kettle',
-      description: ms.key === 'ru' ? 'Плагин для супер-пупер умного чайника (умнее меня, 146%)' : 'Plugin for super duper smart kettle (smarter than me, 146%)'
+      description: l10n.key === 'ru' ? 'Плагин для супер-пупер умного чайника (умнее меня, 146%)' : 'Plugin for super duper smart kettle (smarter than me, 146%)'
     }
-  ];
+  ]).current;
 
-  /** TEMPLATES */
   return (
     <section id="portfolio">
-      <h1>{ms.portfolio.title}</h1>
+      <h1>{l10n.portfolio.title}</h1>
       <div className="portfolio-container">
         <div className="portfolio-container--title">Discord</div>
         <div className="portfolio-container--items">
           {discordBotsData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">Telegram</div>
+        <div className="portfolio-container--items">
+          {telegramData.map((value, index) => (
             <PortfolioItem
               key={index}
               link={value.link}
@@ -134,7 +169,19 @@ const Portfolio = ({ ms }) => {
               link={value.link}
               title={value.title}
               description={value.description}
-              status={value.status}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="portfolio-container">
+        <div className="portfolio-container--title">MOBILE</div>
+        <div className="portfolio-container--items">
+          {mobileData.map((value, index) => (
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
             />
           ))}
         </div>
@@ -142,49 +189,7 @@ const Portfolio = ({ ms }) => {
       <div className="portfolio-container">
         <div className="portfolio-container--title">WEB</div>
         <div className="portfolio-container--items">
-          {uxuiData.map((value, index) => (
-            <PortfolioItem
-              key={index}
-              link={value.link}
-              title={value.title}
-              description={value.description}
-              status={value.status}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
-        <div className="portfolio-container--title">Donation Alerts</div>
-        <div className="portfolio-container--items">
-          {donationAlertsData.map((value, index) => (
-            <PortfolioItem
-              key={index}
-              link={value.link}
-              title={value.title}
-              description={value.description}
-              status={value.status}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
-        <div className="portfolio-container--title">VK</div>
-        <div className="portfolio-container--items">
-          {vkData.map((value, index) => (
-            <PortfolioItem
-              key={index}
-              link={value.link}
-              title={value.title}
-              description={value.description}
-              status={value.status}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
-        <div className="portfolio-container--title">API</div>
-        <div className="portfolio-container--items">
-          {apiData.map((value, index) => (
+          {webData.map((value, index) => (
             <PortfolioItem
               key={index}
               link={value.link}
@@ -210,7 +215,7 @@ const Portfolio = ({ ms }) => {
         </div>
       </div>
       <div className="my-contacts">
-        <div className="my-contacts--title">{ms.portfolio.thatsMe}</div>
+        <div className="my-contacts--title">{l10n.portfolio.thatsMe}</div>
         <div className="my-contacts--links">
           <a href="https://vk.com/ch3rn1k" target="_blank">VK</a>
           <a href="https://t.me/ch3rn1k" target="_blank">TELEGRAM</a>

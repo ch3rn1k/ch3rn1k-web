@@ -1,4 +1,4 @@
-const ms = {
+export default {
   welcome: {
     typicalIT: 'Typical IT',
     aLotOfCode: 'Some code',
@@ -8,7 +8,7 @@ const ms = {
     myName: 'My name is ch3rn1k and I am Fullstack JS.',
     miscText: [
       'Yeah, NodeJS, MERN and all of this stuff!',
-      'Just touched C# и C++, but survived and returned to the WEB. :D'
+      'Of course, I can make applications on the phone, and on the PC. (:'
     ],
     whatIAmDoing: [
       'Creating user-friendly interfaces in complex applications - UX/UI.',
@@ -22,5 +22,3 @@ const ms = {
   messageMePlease: 'Write me, do not be shy!',
   key: 'en'
 };
-
-export default ms;

@@ -1,26 +1,20 @@
-import React from 'react';
+import React, { Fragment, useRef } from 'react';
 import Welcome from './Welcome.js';
 import Portfolio from './Portfolio.js';
 import Mail from './Mail.js';
-import msRU from '../language/ru';
-import msEN from '../language/en';
+import RU from '../language/ru';
+import EN from '../language/en';
 import '../assets/styles/App.scss';
 
-const getLanguageMessages = () => {
-  if (navigator.language === 'ru-RU' || navigator.language === 'ru') return msRU;
-  else return msEN;
-};
-
 const App = () => {
-  const allMessages = getLanguageMessages();
+  const allTranslations = useRef(navigator.language === 'ru-RU' || navigator.language === 'ru' ? RU : EN).current;
 
-  /** TEMPLATE */
   return (
-    <>
-      <Welcome ms={allMessages} />
-      <Portfolio ms={allMessages} />
-      <Mail ms={allMessages} />
-    </>
+    <Fragment>
+      <Welcome l10n={allTranslations} />
+      <Portfolio l10n={allTranslations} />
+      <Mail l10n={allTranslations} />
+    </Fragment>
   );
 };
 

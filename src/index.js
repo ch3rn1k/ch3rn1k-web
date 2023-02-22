@@ -58,7 +58,6 @@ class Core {
     return null;
 	}
 }
-
-const core = new Core();
+new Core();
 
 ReactDOM.render(<App />, document.getElementById('app'));
