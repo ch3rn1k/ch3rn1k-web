@@ -1,5 +1,5 @@
-@import '../fonts/RoadRadio/RoadRadio.css';
-@import '../fonts/Gilroy/Gilroy.css';
+@import "../fonts/RoadRadio/RoadRadio.css";
+@import "../fonts/Gilroy/Gilroy.css";
 
 /** Main Styles */
 $main-color: #f9d342;
@@ -41,11 +41,14 @@ h1 {
   margin: 0;
 }
 
-
 /** Animations */
 @keyframes moveDown {
-  0% { background-position-y: 0px; }
-  100% { background-position-y: 70px; }
+  0% {
+    background-position-y: 0px;
+  }
+  100% {
+    background-position-y: 70px;
+  }
 }
 
 /** Large Devices Oprimization */
