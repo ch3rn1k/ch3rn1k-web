@@ -9,12 +9,12 @@ const Portfolio = () => {
     {
       link: 'https://discord.com/api/oauth2/authorize?client_id=1043512059108798484&permissions=8&scope=bot%20applications.commands',
       title: translation.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
-      description: translation.key === 'ru' ? 'Бот с оповещениями о новых ЖБ' : 'Bot with notifications about new warns from forum',
+      description: translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
       status: 'on'
     },
     {
       title: 'Armavir Bot',
-      description: translation.key === 'ru' ? 'Ботярикс с кучей функционала' : 'Bot with a lot of functions',
+      description: translation.key === 'ru' ? 'Ботярикс с кучей функционала для фанаток' : 'Bot with a lot of functions for fanboys',
       status: 'private'
     },
     {
@@ -54,12 +54,12 @@ const Portfolio = () => {
     {
       link: 'https://landlord.ru',
       title: 'LANDLORD',
-      description: 'Fullstack . NextJS + React'
+      description: 'Full Stack . NextJS + React JS'
     },
     {
       link: 'https://pro.landlord.ru',
       title: 'LANDLORD PRO',
-      description: 'Fullstack . Vanilla + Microservices'
+      description: 'Full Stack . Vanilla JS + Microservices JS'
     },
     {
       link: 'https://ch3rn1k.me',
@@ -72,20 +72,25 @@ const Portfolio = () => {
       description: 'Frontend . React'
     },
     {
+      link: 'https://ch3rn1k.me/mwiki',
+      title: 'MWIKI',
+      description: 'Full Stack . React TS'
+    },
+    {
       link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
-      title: translation.key === 'ru' ? 'Всратое колесо фортуны' : 'Shitty the wheel of fortune',
-      description: translation.key === 'ru' ? 'Колесо фортуны при донатиках' : 'Wheel of Fortune on donuts'
+      title: translation.key === 'ru' ? 'Колесо фортуны' : 'Wheel of fortune',
+      description: 'Vanilla JS'
     },
     {
       title: 'Majestic Web Scrapper',
-      description: translation.key === 'ru' ? 'Паук который вечно парсит темы на форуме' : 'A crawler that always parses forum threads'
+      description: 'Back End . Playwright + TS'
     }
   ]).current;
   const telegramData = useRef([
     {
       link: 'https://t.me/majesticforumbot',
       title: translation.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
-      description: translation.key === 'ru' ? 'Бот с оповещениями о новых ЖБ' : 'Bot with notifications about new warns from forum',
+      description: translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
       status: 'on'
     },
     {
@@ -115,10 +120,10 @@ const Portfolio = () => {
     {
       link: 'https://ch3rn1k.me/binderbot/download?s=website',
       title: 'BinderBot',
-      description: translation.key === 'ru' ? 'Лучший биндер для гташки 5' : 'Best binder for GTA5'
+      description: translation.key === 'ru' ? 'Лучший биндер для роле-плау игр' : 'Best binder for role-play gaming'
     }
   ]).current;
-  const homebridgeData = useRef([
+  const othersData = useRef([
     {
       link: 'https://github.com/ch3rn1k/homebridge-multipurpose-kettle',
       title: 'Xiaomi Multipurpose Kettle',
@@ -126,6 +131,21 @@ const Portfolio = () => {
         translation.key === 'ru'
           ? 'Плагин для супер-пупер умного чайника (умнее меня, 146%)'
           : 'Plugin for super duper smart kettle (smarter than me, 146%)'
+    },
+    {
+      title: 'BaseBuilding Kolhoz',
+      description:
+        translation.key === 'ru' ? 'Мод для DayZ сервера для контроля стройки' : 'Mod for the DayZ server to control construction',
+      status: 'private'
+    },
+    {
+      title: 'BodiesControl Kolhoz',
+      description: translation.key === 'ru' ? 'Мод для DayZ сервера для удаления трупиков' : 'Mod for DayZ server to remove corpses',
+      status: 'private'
+    },
+    {
+      title: 'BinderBot API',
+      description: translation.key === 'ru' ? 'API магазина для BinderBot' : 'API for shop inside BinderBot'
     }
   ]).current;
 
@@ -173,10 +193,10 @@ const Portfolio = () => {
         </div>
       </div>
       <div className="portfolio-container">
-        <h5>Homebridge</h5>
+        <h5>Others</h5>
         <div className="portfolio-container--items">
-          {homebridgeData.map((value, index) => (
-            <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} />
+          {othersData.map((value, index) => (
+            <PortfolioItem key={index} title={value.title} description={value.description} status={value.status} />
           ))}
         </div>
       </div>
