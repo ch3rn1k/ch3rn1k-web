@@ -1,49 +1,42 @@
 {
   "name": "ch3rn1k-web",
-  "version": "1.0.1",
-  "description": "ch3rn1k.me website based on react with webpack",
+  "version": "1.0.2",
+  "description": "ch3rn1k.me website - React+TS",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ch3rn1k/ch3rn1k-web.git"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "author": "ch3rn1k",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ch3rn1k/ch3rn1k-web/issues"
-  },
-  "homepage": "https://github.com/ch3rn1k/ch3rn1k-web#readme",
-  "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-transform-runtime": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-react": "^7.18.6",
-    "babel-loader": "^9.1.2",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.3",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "node-sass": "^8.0.0",
-    "postcss-loader": "^7.2.4",
-    "postcss-preset-env": "^8.3.1",
-    "sass-loader": "^13.2.2",
-    "style-loader": "^3.3.2",
-    "terser-webpack-plugin": "^5.3.7",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.79.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.2",
-    "webpack-merge": "^5.8.0"
-  },
   "dependencies": {
     "framer-motion": "^10.11.6",
+    "gsap": "^3.11.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
