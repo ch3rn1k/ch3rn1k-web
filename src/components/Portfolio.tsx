@@ -118,7 +118,7 @@ const Portfolio = () => {
   ]).current;
   const desktopData = useRef([
     {
-      link: 'https://ch3rn1k.me/binderbot/download?s=website',
+      link: 'https://binderbot.ru/download?s=website',
       title: 'BinderBot',
       description: translation.key === 'ru' ? 'Лучший биндер для роле-плау игр' : 'Best binder for role-play gaming'
     }
