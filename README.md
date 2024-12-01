@@ -1,3 +1,3 @@
 # ch3rn1k-web
 
-ch3rn1k.me website - React+TS
+ch3rn1k.me website - React+TS+Vite

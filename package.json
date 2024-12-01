@@ -1,43 +1,34 @@
 {
   "name": "ch3rn1k-web",
-  "version": "1.0.2",
-  "description": "ch3rn1k.me website - React+TS",
-  "main": "index.js",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "dev": "vite",
+    "build": "tsc && vite build"
   },
   "author": "ch3rn1k",
   "license": "ISC",
   "dependencies": {
-    "framer-motion": "^10.11.6",
-    "gsap": "^3.11.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^5.0.4"
+    "framer-motion": "^11.12.0",
+    "normalize.css": "^8.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "styled-components": "^6.1.13",
+    "vite": "^6.0.1",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.1.1",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "sass": "^1.69.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "vite": "^6.0.1",
+    "vite-plugin-svgr": "^4.3.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "typescript": "^5.2.2"
   }
 }

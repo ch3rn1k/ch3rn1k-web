@@ -1,16 +1,14 @@
+import 'normalize.css';
+import GlobalStyles from './styles';
+
 import { createRoot } from 'react-dom/client';
-import App from './components/App';
-import Welcome from './components/Welcome';
-import Portfolio from './components/Portfolio';
-import Mail from './components/Mail';
-import './index.scss';
+import { StyleSheetManager } from 'styled-components';
+import { App } from './components/App';
 
-const root = createRoot(document.getElementById('root') as HTMLElement);
-
-root.render(
-  <App>
-    <Welcome />
-    <Portfolio />
-    <Mail />
-  </App>
+const root = document.getElementById('root') as HTMLElement;
+createRoot(root).render(
+  <StyleSheetManager shouldForwardProp={() => true}>
+    <GlobalStyles />
+    <App />
+  </StyleSheetManager>
 );

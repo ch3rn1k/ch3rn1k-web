@@ -1,7 +1,10 @@
-import { Fragment, ReactNode, useEffect } from 'react';
-import { pageIconRandomizer } from '../utils';
+import { useEffect } from 'react';
+import { pageIconRandomizer } from '../ts/Util';
+import { Welcome } from './Welcome';
+import { Portfolio } from './Portfolio';
+import { Mail } from './Mail';
 
-const App = ({ children }: { children: ReactNode }) => {
+export const App = () => {
   useEffect(() => {
     const titles = ['OR WEEB?', 'CAN I HAVE A SLEEP?', 'CALL THE POLICE', 'LEAVE ME ALONE!!!', 'LMAO'];
     document.title = 'WEB CH3RN1K — ' + titles[(titles.length * Math.random()) | 0];
@@ -9,7 +12,12 @@ const App = ({ children }: { children: ReactNode }) => {
     const iconRandomizer = setInterval(() => pageIconRandomizer(), 500);
     return () => clearInterval(iconRandomizer);
   }, []);
-  return <Fragment>{children}</Fragment>;
-};
 
-export default App;
+  return (
+    <>
+      <Welcome />
+      <Portfolio />
+      <Mail />
+    </>
+  );
+};

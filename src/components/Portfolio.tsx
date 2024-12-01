@@ -1,9 +1,53 @@
+import styled from 'styled-components';
 import { useRef } from 'react';
-import PortfolioItem from './PortfolioItem';
-import { getTranslation } from '../utils';
-import '../assets/styles/Portfolio.scss';
+import { PortfolioItem } from './PortfolioItem';
+import { getTranslation } from '../ts/Util';
 
-const Portfolio = () => {
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  padding: var(--padding-section);
+  overflow: hidden;
+  background-color: var(--color-main);
+  color: var(--color-sub);
+
+  ::selection {
+    color: var(--color-main);
+    background-color: var(--color-sub);
+  }
+`;
+const ContainerLinks = styled.div`
+  display: flex;
+
+  a {
+    font-size: 16px;
+    color: #ee2e2e;
+    text-underline-offset: -16px;
+    text-decoration-thickness: 2px;
+    margin-right: 8px;
+  }
+`;
+const ContainerContacts = styled.div`
+  margin-top: auto;
+  padding-top: 80px;
+`;
+const ContainerContactsItem = styled.a`
+  display: block;
+  white-space: nowrap;
+  overflow: auto;
+`;
+
+const Block = styled.div`
+  margin-bottom: 24px;
+`;
+const BlockItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Portfolio = () => {
   const translation = getTranslation();
   const discordBotsData = useRef([
     {
@@ -72,12 +116,21 @@ const Portfolio = () => {
       description: 'Frontend . React'
     },
     {
-      link: 'https://ch3rn1k.me/mwiki',
-      title: 'MWIKI',
+      link: 'https://wiki.majestic-rp.ru',
+      title: 'Majestic Wiki',
       description: 'Full Stack . React TS'
     },
     {
-      link: 'https://ch3rn1k.me/donation?key=sOmEwEiRdKeYfOrDA123&pattern=wheel&min=10',
+      link: 'https://alcor.app',
+      title: 'ALCOR',
+      description: 'Full Stack . React TS'
+    },
+    {
+      link: 'https://rustroom.gg',
+      title: 'Rust Room',
+      description: 'Full Stack . React TS'
+    },
+    {
       title: translation.key === 'ru' ? 'Колесо фортуны' : 'Wheel of fortune',
       description: 'Vanilla JS'
     },
@@ -150,72 +203,70 @@ const Portfolio = () => {
   ]).current;
 
   return (
-    <section id="portfolio">
+    <Container>
       <h2>{translation.portfolio.title}</h2>
-      <div className="portfolio-container">
+      <Block>
         <h5>Discord</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {discordBotsData.map((value, index) => (
             <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} status={value.status} />
           ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
+        </BlockItem>
+      </Block>
+      <Block>
         <h5>Telegram</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {telegramData.map((value, index) => (
             <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} status={value.status} />
           ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
+        </BlockItem>
+      </Block>
+      <Block>
         <h5>DESKTOP</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {desktopData.map((value, index) => (
             <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} />
           ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
+        </BlockItem>
+      </Block>
+      <Block>
         <h5>MOBILE</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {mobileData.map((value, index) => (
             <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} />
           ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
+        </BlockItem>
+      </Block>
+      <Block>
         <h5>WEB</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {webData.map((value, index) => (
             <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} />
           ))}
-        </div>
-      </div>
-      <div className="portfolio-container">
+        </BlockItem>
+      </Block>
+      <Block>
         <h5>Others</h5>
-        <div className="portfolio-container--items">
+        <BlockItem>
           {othersData.map((value, index) => (
             <PortfolioItem key={index} title={value.title} description={value.description} status={value.status} />
           ))}
-        </div>
-      </div>
-      <div className="my-contacts">
-        <div className="my-contacts--title">{translation.portfolio.thatsMe}</div>
-        <div className="my-contacts--links">
-          <a href="https://vk.com/ch3rn1k" target="_blank" rel="noreferrer">
+        </BlockItem>
+      </Block>
+      <ContainerContacts>
+        <div>{translation.portfolio.thatsMe}</div>
+        <ContainerLinks>
+          <ContainerContactsItem href="https://vk.com/ch3rn1k" target="_blank" rel="noreferrer">
             VK
-          </a>
-          <a href="https://t.me/ch3rn1k" target="_blank" rel="noreferrer">
+          </ContainerContactsItem>
+          <ContainerContactsItem href="https://t.me/ch3rn1k" target="_blank" rel="noreferrer">
             TELEGRAM
-          </a>
-          <a href="https://steamcommunity.com/id/ch3rn1k" target="_blank" rel="noreferrer">
+          </ContainerContactsItem>
+          <ContainerContactsItem href="https://steamcommunity.com/id/ch3rn1k" target="_blank" rel="noreferrer">
             STEAM
-          </a>
-        </div>
-      </div>
-    </section>
+          </ContainerContactsItem>
+        </ContainerLinks>
+      </ContainerContacts>
+    </Container>
   );
 };
-
-export default Portfolio;
