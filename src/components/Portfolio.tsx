@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
-import { PortfolioItem } from './PortfolioItem';
-import { getTranslation } from '../ts/Util';
+import { PortfolioItem } from '@/components/PortfolioItem';
+import { getTranslation } from '@/ts/Util';
 
 const Container = styled.section`
   display: flex;
@@ -53,12 +53,16 @@ export const Portfolio = () => {
     {
       link: 'https://discord.com/api/oauth2/authorize?client_id=1043512059108798484&permissions=8&scope=bot%20applications.commands',
       title: translation.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
-      description: translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
+      description:
+        translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
       status: 'on'
     },
     {
       title: 'Armavir Bot',
-      description: translation.key === 'ru' ? 'Ботярикс с кучей функционала для фанаток' : 'Bot with a lot of functions for fanboys',
+      description:
+        translation.key === 'ru'
+          ? 'Ботярикс с кучей функционала для фанаток'
+          : 'Bot with a lot of functions for fanboys',
       status: 'private'
     },
     {
@@ -70,7 +74,8 @@ export const Portfolio = () => {
     {
       link: 'https://discordapp.com/api/oauth2/authorize?client_id=680698134338207754&permissions=0&scope=bot',
       title: translation.key === 'ru' ? 'Приватный комнатник' : 'Private Roomer',
-      description: translation.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
+      description:
+        translation.key === 'ru' ? 'Бот который создает приватные комнаты' : 'Bot that creates private rooms',
       status: 'off'
     },
     {
@@ -90,7 +95,8 @@ export const Portfolio = () => {
     },
     {
       title: translation.key === 'ru' ? 'Всеотец CRMP' : 'Allfather of CRMP',
-      description: translation.key === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP',
+      description:
+        translation.key === 'ru' ? 'Предводитель и контролер семьи в CRMP' : 'Family leader and controller in CRMP',
       status: 'off'
     }
   ]).current;
@@ -143,17 +149,22 @@ export const Portfolio = () => {
     {
       link: 'https://t.me/majesticforumbot',
       title: translation.key === 'ru' ? 'Маджестик парсер' : 'Majestic Parser',
-      description: translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
+      description:
+        translation.key === 'ru' ? 'Бот для оповещениями о новых ЖБ' : 'Bot for recieving notifications from forum',
       status: 'on'
     },
     {
       title: 'Armavir Bot Telegram',
-      description: translation.key === 'ru' ? 'Парсер постов для отправки в DS' : 'Posts parser to send them next to Discord',
+      description:
+        translation.key === 'ru' ? 'Парсер постов для отправки в DS' : 'Posts parser to send them next to Discord',
       status: 'private'
     },
     {
       title: 'Giveway Bot',
-      description: translation.key === 'ru' ? 'Бот с web_app интерфейсом для конкурсов' : 'Bot with web_app interface for contests',
+      description:
+        translation.key === 'ru'
+          ? 'Бот с web_app интерфейсом для конкурсов'
+          : 'Bot with web_app interface for contests',
       status: 'private'
     }
   ]).current;
@@ -188,12 +199,17 @@ export const Portfolio = () => {
     {
       title: 'BaseBuilding Kolhoz',
       description:
-        translation.key === 'ru' ? 'Мод для DayZ сервера для контроля стройки' : 'Mod for the DayZ server to control construction',
+        translation.key === 'ru'
+          ? 'Мод для DayZ сервера для контроля стройки'
+          : 'Mod for the DayZ server to control construction',
       status: 'private'
     },
     {
       title: 'BodiesControl Kolhoz',
-      description: translation.key === 'ru' ? 'Мод для DayZ сервера для удаления трупиков' : 'Mod for DayZ server to remove corpses',
+      description:
+        translation.key === 'ru'
+          ? 'Мод для DayZ сервера для удаления трупиков'
+          : 'Mod for DayZ server to remove corpses',
       status: 'private'
     },
     {
@@ -209,7 +225,13 @@ export const Portfolio = () => {
         <h5>Discord</h5>
         <BlockItem>
           {discordBotsData.map((value, index) => (
-            <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} status={value.status} />
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
           ))}
         </BlockItem>
       </Block>
@@ -217,7 +239,13 @@ export const Portfolio = () => {
         <h5>Telegram</h5>
         <BlockItem>
           {telegramData.map((value, index) => (
-            <PortfolioItem key={index} link={value.link} title={value.title} description={value.description} status={value.status} />
+            <PortfolioItem
+              key={index}
+              link={value.link}
+              title={value.title}
+              description={value.description}
+              status={value.status}
+            />
           ))}
         </BlockItem>
       </Block>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getTranslation } from '../ts/Util';
+import { getTranslation } from '@/ts/Util';
 
 const Container = styled.section`
   display: flex;

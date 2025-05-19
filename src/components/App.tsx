@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { pageIconRandomizer } from '../ts/Util';
-import { Welcome } from './Welcome';
-import { Portfolio } from './Portfolio';
-import { Mail } from './Mail';
+import { pageIconRandomizer } from '@/ts/Util';
+import { Welcome } from '@/components/Welcome';
+import { Portfolio } from '@/components/Portfolio';
+import { Mail } from '@/components/Mail';
 
 export const App = () => {
   useEffect(() => {

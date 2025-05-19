@@ -77,15 +77,14 @@ export const pageIconRandomizer = () => {
   img.src = icon.href;
 
   img.onload = () => {
-    /** Draw original favicon as background. */
     context.drawImage(img, 0, 0, 16, 16);
 
     context.textAlign = 'center';
     context.textBaseline = 'middle';
     context.fillText(
       emojiList[(emojiList.length * Math.random()) | 0],
-      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.width / 2 - 0.125 : canvas.width / 2,
-      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.height / 2 + 1.05 : canvas.height / 2
+      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.width / 2 : canvas.width / 2,
+      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.height / 2 : canvas.height / 2
     );
 
     icon.href = canvas.toDataURL('image/png');

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { getTranslation } from '../ts/Util';
+import { motion } from 'motion/react';
+import { getTranslation } from '@/ts/Util';
 
-import JS from '../assets/skill/js.svg?react';
-import TS from '../assets/skill/ts.svg?react';
-import NodeJS from '../assets/skill/nodejs.svg?react';
-import React from '../assets/skill/react.svg?react';
-import Electron from '../assets/skill/electron.svg?react';
-import MongoDB from '../assets/skill/mongodb.svg?react';
+import JS from '@/assets/skill/js.svg?react';
+import TS from '@/assets/skill/ts.svg?react';
+import NodeJS from '@/assets/skill/nodejs.svg?react';
+import React from '@/assets/skill/react.svg?react';
+import Electron from '@/assets/skill/electron.svg?react';
+import MongoDB from '@/assets/skill/mongodb.svg?react';
 
 const Container = styled.section`
   display: flex;
