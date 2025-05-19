@@ -1,5 +1,11 @@
 import { TranslationProps } from './Interface';
 
+declare global {
+  interface Window {
+    originalFavicon?: string;
+  }
+}
+
 export const getTranslation = (): TranslationProps => {
   return navigator.language === 'ru-RU' || navigator.language === 'ru'
     ? {
@@ -65,7 +71,57 @@ export const getOS = () => {
 };
 
 export const pageIconRandomizer = () => {
-  const emojiList = ['🤡', '😂', '😍', '😏', '🤔', '😎', '🌚', '🌝', '👅', '💩', '🥴', '🤕', '🤤', '🤬', '🥳'];
+  const emojiList = [
+    '🤡',
+    '😂',
+    '😍',
+    '😏',
+    '🤔',
+    '😎',
+    '🌚',
+    '🌝',
+    '👅',
+    '💩',
+    '🥴',
+    '🤕',
+    '🤤',
+    '🤬',
+    '🥳',
+    '🤪',
+    '😜',
+    '🤓',
+    '🤯',
+    '🥸',
+    '🤠',
+    '👻',
+    '👾',
+    '🤖',
+    '👽',
+    '🦄',
+    '🦋',
+    '🦁',
+    '🐸',
+    '🐙',
+    '🦑',
+    '🦀',
+    '🦞',
+    '🦐',
+    '🦪',
+    '🍕',
+    '🍔',
+    '🍟',
+    '🌮',
+    '🌯',
+    '🍿',
+    '🍪',
+    '🍭',
+    '🍩'
+  ];
+
+  if (!window.originalFavicon) {
+    const icon = document.querySelector('link[rel="icon"]') as unknown as HTMLHyperlinkElementUtils;
+    window.originalFavicon = icon.href;
+  }
 
   const canvas = document.createElement('canvas');
   canvas.width = 16;
@@ -74,7 +130,7 @@ export const pageIconRandomizer = () => {
   const context = canvas.getContext('2d') as CanvasRenderingContext2D;
   const img = document.createElement('img');
   const icon = document.querySelector('link[rel="icon"]') as unknown as HTMLHyperlinkElementUtils;
-  img.src = icon.href;
+  img.src = window.originalFavicon;
 
   img.onload = () => {
     context.drawImage(img, 0, 0, 16, 16);
@@ -83,8 +139,8 @@ export const pageIconRandomizer = () => {
     context.textBaseline = 'middle';
     context.fillText(
       emojiList[(emojiList.length * Math.random()) | 0],
-      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.width / 2 : canvas.width / 2,
-      getOS() === 'Mac OS' || getOS() === 'iOS' ? canvas.height / 2 : canvas.height / 2
+      canvas.width / 2 - 0.125,
+      canvas.height / 2 + 1.25
     );
 
     icon.href = canvas.toDataURL('image/png');
