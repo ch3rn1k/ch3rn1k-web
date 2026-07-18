@@ -1,10 +1,13 @@
 FROM node:22.15.1-alpine AS build
 
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+
+RUN corepack enable && corepack prepare pnpm@11 --activate
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
-RUN yarn build
+RUN pnpm build
 
 FROM nginx:alpine
 
