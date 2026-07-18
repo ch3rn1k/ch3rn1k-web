@@ -1,0 +1,217 @@
+.container {
+  position: relative;
+  padding: var(--padding-section);
+  padding-top: clamp(64px, 10vh, 120px);
+  padding-bottom: clamp(64px, 10vh, 120px);
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: clamp(28px, 5vh, 48px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.category {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.category[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.category:last-of-type {
+  margin-bottom: 0;
+}
+
+.categoryHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 0 0 10px;
+  border: 0;
+  border-bottom: 1px solid var(--color-border-strong);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 140ms ease;
+}
+
+.categoryHead:hover,
+.categoryHead:focus-visible {
+  border-bottom-color: var(--color-fg-muted);
+  outline: none;
+}
+
+.categoryIndex {
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-fg-dim);
+}
+
+.categoryTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.categoryCount {
+  margin-left: auto;
+  font-size: var(--font-size-xs);
+  color: var(--color-fg-dim);
+  letter-spacing: 0.1em;
+}
+
+.categoryChevron {
+  font-size: var(--font-size-sm);
+  color: var(--color-fg-muted);
+  min-width: 1ch;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px 24px;
+  align-items: center;
+  margin-top: clamp(56px, 8vh, 96px);
+  padding: 22px 20px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--color-bg-elevated) 92%, transparent);
+  color: inherit;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.contact:hover {
+  border-color: var(--color-fg-muted);
+  background-color: color-mix(in srgb, var(--color-bright) 4%, var(--color-bg-elevated));
+}
+
+@media screen and (max-width: 640px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactMeta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.contactTitle {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.contactHandle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.04em;
+  color: var(--color-bright);
+  cursor: pointer;
+}
+
+.contactHandle:hover,
+.contactHandle:focus-visible {
+  opacity: 0.85;
+  outline: none;
+}
+
+.copyHint {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-fg-dim);
+}
+
+.copyHint[data-copied='true'] {
+  color: var(--color-status-on);
+}
+
+.contactCta {
+  justify-self: end;
+  align-self: center;
+  padding: 10px 14px;
+  border: 1px solid var(--color-bright);
+  background: var(--color-bright);
+  color: var(--color-bg);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.contactCta:hover,
+.contactCta:focus-visible {
+  opacity: 0.88;
+  outline: none;
+}
+
+@media screen and (max-width: 640px) {
+  .contactCta {
+    justify-self: start;
+  }
+}

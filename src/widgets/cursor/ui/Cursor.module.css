@@ -1,0 +1,96 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .root {
+    display: none;
+  }
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: var(--color-bright);
+  will-change: transform;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-bright) 55%, transparent);
+  background: transparent;
+  opacity: 0.75;
+  will-change: transform;
+  transition:
+    width 160ms ease,
+    height 160ms ease,
+    margin 160ms ease,
+    opacity 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.ring[data-active='true'] {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  opacity: 1;
+  border-color: var(--color-bright);
+  background: color-mix(in srgb, var(--color-bright) 8%, transparent);
+}
+
+.ring[data-pressed='true'] {
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  opacity: 1;
+}
+
+.cross {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.cross::before,
+.cross::after {
+  content: '';
+  position: absolute;
+  background: var(--color-bright);
+}
+
+.cross::before {
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.cross::after {
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform: translateY(-50%);
+}

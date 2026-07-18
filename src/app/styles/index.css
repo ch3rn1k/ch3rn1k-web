@@ -1,0 +1,133 @@
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #111111;
+  --color-fg: #f2f2f2;
+  --color-fg-muted: #6e6e6e;
+  --color-fg-dim: #3a3a3a;
+  --color-border: #1e1e1e;
+  --color-border-strong: #2a2a2a;
+  --color-bright: #ffffff;
+  --color-status-on: #7cff6b;
+  --color-status-off: #ff5a5a;
+  --color-status-private: #d4a017;
+
+  --font-display: 'Doto', monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 2px;
+
+  @supports (font-size: clamp(1rem, 1vw, 1rem)) {
+    --font-size-xs: clamp(0.65rem, 0.2vw + 0.6rem, 0.72rem);
+    --font-size-sm: clamp(0.75rem, 0.25vw + 0.7rem, 0.85rem);
+    --font-size-base: clamp(0.9rem, 0.35vw + 0.82rem, 1.05rem);
+    --font-size-md: clamp(1.05rem, 0.6vw + 0.9rem, 1.35rem);
+    --font-size-lg: clamp(1.35rem, 1.4vw + 0.95rem, 2rem);
+    --font-size-xl: clamp(2rem, 4vw + 1rem, 4.5rem);
+    --font-size-xxl: clamp(2.8rem, 7vw + 0.8rem, 7rem);
+  }
+  @supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    --font-size-xs: 0.65rem;
+    --font-size-sm: 0.75rem;
+    --font-size-base: 0.9rem;
+    --font-size-md: 1.05rem;
+    --font-size-lg: 1.35rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.8rem;
+
+    @media screen and (min-width: 1000px) {
+      --font-size-base: 1.05rem;
+      --font-size-md: 1.35rem;
+      --font-size-lg: 2rem;
+      --font-size-xl: 4.5rem;
+      --font-size-xxl: 7rem;
+    }
+  }
+
+  @supports (padding: clamp(1rem, 1%, 1rem)) {
+    --padding-section: clamp(1.25rem, 4vw, 3.5rem);
+  }
+  @supports not (padding: clamp(1rem, 1%, 1rem)) {
+    --padding-section: 1.25rem 1.5rem;
+
+    @media screen and (min-width: 1000px) {
+      --padding-section: 2rem 3.5rem;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+::selection {
+  color: var(--color-bg);
+  background-color: var(--color-bright);
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+}
+h2 {
+  font-size: var(--font-size-xl);
+}
+h3 {
+  font-size: var(--font-size-lg);
+}
+h4 {
+  font-size: var(--font-size-md);
+}
+h5 {
+  font-size: var(--font-size-base);
+}
+h6 {
+  font-size: var(--font-size-sm);
+}
+
+a {
+  color: var(--color-fg);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+button {
+  font-family: inherit;
+}
