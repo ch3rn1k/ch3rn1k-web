@@ -77,11 +77,13 @@
   line-height: 1;
   color: var(--color-bright);
   white-space: nowrap;
-  transition: transform 160ms ease;
 }
 
-.value[data-pop='true'] {
-  transform: scale(1.18);
+.value :global(number-flow-react) {
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .value[data-busy='true'] {

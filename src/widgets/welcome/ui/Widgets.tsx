@@ -1,3 +1,4 @@
+import NumberFlow from '@number-flow/react';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useTranslation } from '@/shared/lib/i18n';
 import { COOKIE_KEY, PIXEL_COLS, STACK } from '../lib/constants';
@@ -23,7 +24,6 @@ export const Widgets = () => {
     const n = raw ? Number(raw) : 0;
     return Number.isFinite(n) ? n : 0;
   });
-  const [cookiePop, setCookiePop] = useState(false);
   const [focusIndex, setFocusIndex] = useState(() => Math.floor(Math.random() * translation.widgets.focusModes.length));
   const [stackIndex, setStackIndex] = useState(0);
   const [ping, setPing] = useState(randomPing);
@@ -47,8 +47,6 @@ export const Widgets = () => {
       localStorage.setItem(COOKIE_KEY, String(next));
       return next;
     });
-    setCookiePop(true);
-    window.setTimeout(() => setCookiePop(false), 220);
   };
 
   const nextFocus = () => {
@@ -99,8 +97,8 @@ export const Widgets = () => {
 
       <WidgetCard onClick={eatCookie}>
         <div className={styles.label}>{translation.widgets.cookies}</div>
-        <div className={styles.value} data-pop={cookiePop}>
-          {cookies}
+        <div className={styles.value}>
+          <NumberFlow value={cookies} />
         </div>
         <div className={styles.sub}>{translation.widgets.cookiesSub}</div>
       </WidgetCard>
@@ -108,7 +106,7 @@ export const Widgets = () => {
       <WidgetCard onClick={runPing}>
         <div className={styles.label}>{translation.widgets.ping}</div>
         <div className={styles.value} data-busy={pinging}>
-          {ping}
+          <NumberFlow value={ping} />
           <span className={styles.unit}>ms</span>
         </div>
         <div className={styles.sub}>{translation.widgets.pingSub}</div>
